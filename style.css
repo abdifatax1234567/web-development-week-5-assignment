@@ -1,0 +1,188 @@
+
+:root {
+    --brand-color: #1565c0;
+    --accent-color: #42a5f5;
+    --surface-color: #ffffff;
+    --background-color: #f4f7fb;
+    --primary-text: #1f2937;
+    --secondary-text: #6b7280;
+    --border-color: #d9e2ec;
+    --button-text: #ffffff;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text);
+}
+
+.dashboard {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+}
+
+.sidebar {
+    background-color: var(--brand-color);
+    color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.nav-menu a:hover {
+    background-color: var(--accent-color);
+}
+
+.main-content {
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: var(--secondary-text);
+}
+
+.profile-button {
+    border: none;
+    background-color: var(--brand-color);
+    color: var(--button-text);
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cards-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    min-height: 170px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+
+.card:hover,
+.card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    font-size: 20px;
+}
+
+.amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--brand-color);
+}
+
+.description {
+    color: var(--secondary-text);
+}
+
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 20px;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cards-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --brand-color: #64b5f6;
+        --accent-color: #90caf9;
+        --surface-color: #1e293b;
+        --background-color: #0f172a;
+        --primary-text: #f1f5f9;
+        --secondary-text: #cbd5e1;
+        --border-color: #334155;
+        --button-text: #0f172a;
+    }
+
+    .sidebar {
+        color: #0f172a;
+    }
+
+    .nav-menu a {
+        color: #0f172a;
+    }
+
+    .profile-button {
+        color: #0f172a;
+    }
+}
+
